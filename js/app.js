@@ -39,7 +39,7 @@ var Player = function (x, y) {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function (dt) {
-    // this.collisionCheck();
+    this.checkCollisions();
     // this.level();
     // this.score();
     // this.gameOwn();
@@ -91,12 +91,25 @@ Player.prototype.reset = function () {
     this.y = 415;
 }
 
+//player-enemy collision check
+Player.prototype.checkCollisions = function () {
+    if ((player.x > (enemy3.x - 90)) && (player.x < (enemy3.x + 90)) && player.y === enemy3.y){
+        this.reset();
+    }
+    if ((player.x > (enemy2.x - 90)) && (player.x < (enemy2.x + 90)) && player.y === enemy2.y+10) {
+        this.reset();
+    }
+    if ((player.x > (enemy1.x - 90)) && (player.x < (enemy1.x + 90)) && player.y === enemy1.y+5) {
+        this.reset();
+    }
+}
+
 
 // Now instantiate your objects.
 const allEnemies =[];
 const enemy1 = new Enemy(0, 70, 100);
 const enemy2 = new Enemy(0, 150, 200);
-const enemy3 = new Enemy(0, 240, 300);
+const enemy3 = new Enemy(0, 245, 300);
 
 // Place all enemy objects in an array called allEnemies
 allEnemies.push(enemy1, enemy2, enemy3);
