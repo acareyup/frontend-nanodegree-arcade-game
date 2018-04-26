@@ -92,11 +92,17 @@ Player.prototype.reset = function () {
 }
 
 
-
 // Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+const allEnemies =[];
+const enemy1 = new Enemy(10, 70, 100);
+const enemy2 = new Enemy(10, 150, 200);
+const enemy3 = new Enemy(10, 250, 100);
 
+// Place all enemy objects in an array called allEnemies
+allEnemies.push(enemy1, enemy2, enemy3);
+
+// Place the player object in a variable called player
+const player = new Player(300, 480);
 
 
 // This listens for key presses and sends the keys to your
