@@ -39,10 +39,10 @@ var Player = function (x, y) {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function (dt) {
-    this.collisionCheck();
-    this.level();
-    this.score();
-    this.gameOwn();
+    // this.collisionCheck();
+    // this.level();
+    // this.score();
+    // this.gameOwn();
 }
 
 //determine the game boundaries
@@ -51,15 +51,15 @@ Player.prototype.checkBoundary = function () {
     if (this.x < 0){
         this.x = 0;
     }
-    if (this.x > 600){
-        this.x = 600;
+    if (this.x > 450){
+        this.x = 400;
     }
     //y axis boundary
     if (this.y < 0){
-        this.y = 0;
+        this.y = -10;
     }
-    if (this.y > 520){
-        this.y = 480;
+    if (this.y > 420){
+        this.y = 415;
     }
 }
 
@@ -78,31 +78,31 @@ Player.prototype.handleInput = function (input) {
             this.x += 100;
             break;
         case "up":
-            this.y -= 100;
+            this.y -= 85;
             break;
         case "down":
-            this.y += 100;
+            this.y += 85;
             break;
     }
 }
 
 Player.prototype.reset = function () {
-    this.x = 300;
-    this.y = 480;
+    this.x = 200;
+    this.y = 415;
 }
 
 
 // Now instantiate your objects.
 const allEnemies =[];
-const enemy1 = new Enemy(10, 70, 100);
-const enemy2 = new Enemy(10, 150, 200);
-const enemy3 = new Enemy(10, 250, 100);
+const enemy1 = new Enemy(0, 70, 100);
+const enemy2 = new Enemy(0, 150, 200);
+const enemy3 = new Enemy(0, 240, 300);
 
 // Place all enemy objects in an array called allEnemies
 allEnemies.push(enemy1, enemy2, enemy3);
 
 // Place the player object in a variable called player
-const player = new Player(300, 480);
+const player = new Player(200, 415);
 
 
 // This listens for key presses and sends the keys to your
@@ -116,4 +116,5 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+    player.checkBoundary();
 });
