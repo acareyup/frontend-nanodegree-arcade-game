@@ -30,8 +30,67 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
+var Player = function (x, y) {
+    this.sprite = 'images/char-boy.png';
+    this.x = x;
+    this.y = y;
+}
+
 // This class requires an update(), render() and
 // a handleInput() method.
+Player.prototype.update = function (dt) {
+    this.collisionCheck();
+    this.level();
+    this.score();
+    this.gameOwn();
+}
+
+//determine the game boundaries
+Player.prototype.checkBoundary = function () {
+    //x axis boundary
+    if (this.x < 0){
+        this.x = 0;
+    }
+    if (this.x > 600){
+        this.x = 600;
+    }
+    //y axis boundary
+    if (this.y < 0){
+        this.y = 0;
+    }
+    if (this.y > 520){
+        this.y = 480;
+    }
+}
+
+//render player image
+Player.prototype.render = function () {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
+//determine position change on 4-axis
+Player.prototype.handleInput = function (input) {
+    switch (input) {
+        case "left":
+            this.x -= 100;
+            break;
+        case "right":
+            this.x += 100;
+            break;
+        case "up":
+            this.y -= 100;
+            break;
+        case "down":
+            this.y += 100;
+            break;
+    }
+}
+
+Player.prototype.reset = function () {
+    this.x = 300;
+    this.y = 480;
+}
+
 
 
 // Now instantiate your objects.
