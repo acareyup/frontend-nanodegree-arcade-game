@@ -93,13 +93,13 @@ Player.prototype.reset = function () {
 
 //player-enemy collision check
 Player.prototype.checkCollisions = function () {
-    if ((player.x > (enemy3.x - 90)) && (player.x < (enemy3.x + 90)) && player.y === enemy3.y){
+    if ((player.x > (enemy3.x - 80)) && (player.x < (enemy3.x + 80)) && player.y === enemy3.y){
         this.reset();
     }
-    if ((player.x > (enemy2.x - 90)) && (player.x < (enemy2.x + 90)) && player.y === enemy2.y+10) {
+    if ((player.x > (enemy2.x - 80)) && (player.x < (enemy2.x + 80)) && player.y === enemy2.y+10) {
         this.reset();
     }
-    if ((player.x > (enemy1.x - 90)) && (player.x < (enemy1.x + 90)) && player.y === enemy1.y+5) {
+    if ((player.x > (enemy1.x - 80)) && (player.x < (enemy1.x + 80)) && player.y === enemy1.y+5) {
         this.reset();
     }
 }
