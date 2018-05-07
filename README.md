@@ -1,6 +1,19 @@
-frontend-nanodegree-arcade-game
+Frontend-nanodegree-arcade-game
 ===============================
+# How to run the game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+  **1.** Clone this repo:
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+```
+$ https://github.com/acareyup/frontend-nanodegree-arcade-game.git
+```
+or 
+**2.** Download the repository:
+Download the repository in your desktop, unzip it and open the "index.html" file in your browser to play the game.
+
+# How to play the Game
+  - Use Left,Right,Up and Down arrow keys to move the player
+  - Player should reach to the water level to finish the game
+  - If player and enemy collision happened Player position will get reset to the initial position.
+
+THERE WILL BE UPDATES SOON... :)
