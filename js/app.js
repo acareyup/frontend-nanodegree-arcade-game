@@ -35,6 +35,7 @@ var Player = function (x, y) {
     this.x = x;
     this.y = y;
     this.lives = 3;
+    this.score = 0;
 }
 
 // This class requires an update(), render() and
@@ -45,6 +46,7 @@ Player.prototype.update = function (dt) {
     // this.score();
     this.gameWon();
     checkLives();
+    showScore();
 }
 
 //determine the game boundaries
@@ -113,6 +115,7 @@ Player.prototype.checkCollisions = function () {
 Player.prototype.gameWon = function () {
     if (this.y < 0){
         this.y = 415;
+        this.score += 100;
     }
 }
 
@@ -152,3 +155,9 @@ function checkLives(){
     const lives = document.querySelector("#lives");
     lives.innerHTML = player.lives;
 };
+
+//show score 
+function showScore() {
+    const score = document.querySelector("#score");
+    score.innerHTML = player.score;
+}
