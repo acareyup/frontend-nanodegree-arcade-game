@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:500,600');
 body {
     text-align: center;
+    background: #7474BF;
+    /* fallback for old browsers */
+
+    background: -webkit-linear-gradient(to bottom, #348AC7, #7474BF);
+    /* Chrome 10-25, Safari 5.1-6 */
+
+    background: linear-gradient(to bottom, #348AC7, #7474BF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+}
+
+.text div {
+    margin:20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
 }
