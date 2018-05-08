@@ -25,3 +25,21 @@ body {
     font-size: 25px;
     font-weight: 600;
 }
+
+.gameover {
+    display: none;
+    margin: auto;
+    width : 250px;
+    height: 175px;
+    color: #ddd;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2em;
+    background-color:#348AC7;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

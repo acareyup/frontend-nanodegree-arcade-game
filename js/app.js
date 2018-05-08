@@ -1,3 +1,4 @@
+let state = true;
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
@@ -47,6 +48,7 @@ Player.prototype.update = function (dt) {
     this.gameWon();
     checkLives();
     showScore();
+    gameOver();
 }
 
 //determine the game boundaries
@@ -119,7 +121,6 @@ Player.prototype.gameWon = function () {
     }
 }
 
-
 // Now instantiate your objects.
 const allEnemies =[];
 const enemy1 = new Enemy(0, 70, 100);
@@ -131,10 +132,6 @@ allEnemies.push(enemy1, enemy2, enemy3);
 
 // Place the player object in a variable called player
 const player = new Player(200, 415);
-
-
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -160,4 +157,13 @@ function checkLives(){
 function showScore() {
     const score = document.querySelector("#score");
     score.innerHTML = player.score;
+}
+
+function gameOver (){
+    if (player.lives === 0){
+        state = false;
+        const text = document.querySelector(".gameover");
+        text.style.display ="block";
+        document.querySelector(".finalscore").innerHTML = player.score;
+    }
 }
