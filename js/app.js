@@ -104,6 +104,7 @@ Player.prototype.checkCollisions = function () {
     }
 }
 
+//check if the player has reached the water
 Player.prototype.gameWon = function () {
     if (this.y < 0){
         this.y = 415;
@@ -123,7 +124,7 @@ allEnemies.push(enemy1, enemy2, enemy3);
 // Place the player object in a variable called player
 const player = new Player(200, 415);
 
-//check if the player has reached the water
+
 
 
 
