@@ -114,7 +114,7 @@ Player.prototype.checkCollisions = function () {
 //check if the player has reached the water
 Player.prototype.gameWon = function () {
     if (this.y < 0){
-        this.y = 415;
+        this.reset();
         this.score += 100;
     }
 }
