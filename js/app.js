@@ -34,6 +34,7 @@ var Player = function (x, y) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
+    this.lives = 3;
 }
 
 // This class requires an update(), render() and
@@ -43,6 +44,7 @@ Player.prototype.update = function (dt) {
     // this.level();
     // this.score();
     this.gameWon();
+    checkLives();
 }
 
 //determine the game boundaries
@@ -95,12 +97,15 @@ Player.prototype.reset = function () {
 Player.prototype.checkCollisions = function () {
     if ((player.x > (enemy3.x - 80)) && (player.x < (enemy3.x + 80)) && player.y === enemy3.y){
         this.reset();
+        this.lives -= 1;
     }
     if ((player.x > (enemy2.x - 80)) && (player.x < (enemy2.x + 80)) && player.y === enemy2.y+10) {
         this.reset();
+        this.lives -= 1;
     }
     if ((player.x > (enemy1.x - 80)) && (player.x < (enemy1.x + 80)) && player.y === enemy1.y+5) {
         this.reset();
+        this.lives -= 1;
     }
 }
 
@@ -141,3 +146,9 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
     player.checkBoundary();
 });
+
+//player lives functionality
+function checkLives(){
+    const lives = document.querySelector("#lives");
+    lives.innerHTML = player.lives;
+};
