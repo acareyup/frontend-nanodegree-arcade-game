@@ -20,7 +20,7 @@ Enemy.prototype.update = function(dt) {
     // all computers.
     this.x = this.x + (this.speed * dt);
     if (this.x > 600) {
-        this.x = 0;
+        this.x = -150;
     }
     return this.x;
 };
@@ -124,8 +124,8 @@ Player.prototype.gameWon = function () {
 // Now instantiate your objects.
 const allEnemies =[];
 const enemy1 = new Enemy(-100, 70, 100);
-const enemy2 = new Enemy(-150, 150, 200);
-const enemy3 = new Enemy(-200, 245, 300);
+const enemy2 = new Enemy(-150, 150, 220);
+const enemy3 = new Enemy(-200, 245, 330);
 
 // Place all enemy objects in an array called allEnemies
 allEnemies.push(enemy1, enemy2, enemy3);
