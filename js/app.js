@@ -123,9 +123,9 @@ Player.prototype.gameWon = function () {
 
 // Now instantiate your objects.
 const allEnemies =[];
-const enemy1 = new Enemy(0, 70, 100);
-const enemy2 = new Enemy(0, 150, 200);
-const enemy3 = new Enemy(0, 245, 300);
+const enemy1 = new Enemy(-100, 70, 100);
+const enemy2 = new Enemy(-150, 150, 200);
+const enemy3 = new Enemy(-200, 245, 300);
 
 // Place all enemy objects in an array called allEnemies
 allEnemies.push(enemy1, enemy2, enemy3);
